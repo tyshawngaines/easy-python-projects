@@ -1,6 +1,4 @@
-#Shift Worker turnover log: End of day script
-import time,os
-import datetime from datetime
+import time
 
 employee=input('What is your name?\n')
 emplist=[]
@@ -16,19 +14,30 @@ while exit<2:
     print('What shift did you work?')
     day=input('Morning (m), Afternoon (a),Evening (e) \n')
     if (day== 'm') or (day =='M'):
-        print('Morning')
+        day='Morning'
         break
     elif (day== 'a') or (day =='A'):
-        print('Afternoon')
+        day='Afternoon'
         break
     elif (day== 'e') or (day =='E'):
-        print('Evening')
+        day='Evening'
         break
     else:
         print(day)
     exit+=1
 
 exit=0
+try:
+    if (day !='') or (employee !=''):
+        a=open('worklog.txt','w')
+        a.write('Hello and good '+day+', this is '+employee)
+        a.close()
+    else:
+        print('did not give enough valid responses..\n')
+except:
+    print('failed process, terminating process..')
+
+
 while exit<2:
     print('Anything else needed to pass to next shift?')
     finalinput=input('Yes (y), No (n)\n')
