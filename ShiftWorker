@@ -1,51 +1,47 @@
+# Hi I have a project with a cool idea, im sure im not the first to try but what the heck right?
+# Anyways, I am doing a simplifed work flow.
+# Not just any workflow but one to simply knowledge transfer at the end of a shift.
+# The plan is to create a script that will ask alot of 1 letter response that equals alot.
+# I want to save people to list if name has not been used before
+# Once done it will make a txt file and email it to that individual.
+# Sounds cool huh? Who's willing to help out? give some inputs thanks.
+
+
 import time
 
 employee=input('What is your name?\n')
 emplist=[]
 
+while (employee.isdigit()) or '':
+    print('Please try again.\n')
+    employee=input('What is your name?\n')
+    
 if employee in emplist:
     pass
 else:
     emplist.append(employee)
-print(('Greetings %s,')%(employee.title()))
+print(('Greetings %s,')%(employee.title())+'\n')
 
-exit=0
-while exit<2:
-    print('What shift did you work?')
-    day=input('Morning (m), Afternoon (a),Evening (e) \n')
-    if (day== 'm') or (day =='M'):
-        day='Morning'
-        break
-    elif (day== 'a') or (day =='A'):
-        day='Afternoon'
-        break
-    elif (day== 'e') or (day =='E'):
-        day='Evening'
-        break
-    else:
-        print(day)
-    exit+=1
+time.sleep(2)
 
-exit=0
-try:
-    if (day !='') or (employee !=''):
-        a=open('worklog.txt','w')
-        a.write('Hello and good '+day+', this is '+employee)
-        a.close()
-    else:
-        print('did not give enough valid responses..\n')
-except:
-    print('failed process, terminating process..')
+def myshift():
+    exit=0
+    while exit<2:
+        print('What shift did you work?')
+        day=input('Morning (m), Afternoon (a),Evening (e) \n')
+        if (day== 'm') or (day =='M'):
+            day='Morning'
+            return ('Hey this is '+employee+' ,the shift I worked on was the Morning.')
+        elif (day== 'a') or (day =='A'):
+            day='Afternoon'
+            return ('Hey this is '+employee+' ,today the shift I worked was the Afternoon.')
+        elif (day== 'e') or (day =='E'):
+            day='Evening'
+            return ('Hey this is '+employee+' ,and the shift I worked today was the Evening.')
+        else:
+            timesleep(2)
+            print(day)
+        exit+=1
+print(myshift())
 
 
-while exit<2:
-    print('Anything else needed to pass to next shift?')
-    finalinput=input('Yes (y), No (n)\n')
-    if (finalinput== 'Y') or (finalinput =='y'):
-        print('Please add addition comments, then press enter (2)times to exit program.\n')
-        break
-    elif (finalinput== 'N') or (finalinput =='n'):
-        break
-    else:
-        print(finalinput)
-    exit+=1
