@@ -6,42 +6,73 @@
 # Once done it will make a txt file and email it to that individual.
 # Sounds cool huh? Who's willing to help out? give some inputs thanks.
 
-
-import time
+import time, random
 
 employee=input('What is your name?\n')
 emplist=[]
 
-while (employee.isdigit()) or '':
+
+
+while (employee.isdigit()) or (employee==''):
     print('Please try again.\n')
     employee=input('What is your name?\n')
-    
+
+
 if employee in emplist:
     pass
 else:
     emplist.append(employee)
+
+coolphrase=['Hi this is','Whats up it\'s','Hello it\'s me again','Hey stranger! it\'s me again','Long time no see, it\'s']
+
+emplname=(random.choice(coolphrase))+' %s'%(employee.title())+'. \n'
+worklog=open('worklog.txt','w')
+worklog.write(emplname)
+worklog.close()
 print(('Greetings %s,')%(employee.title())+'\n')
 
-time.sleep(2)
-
-def myshift():
-    exit=0
-    while exit<2:
-        print('What shift did you work?')
-        day=input('Morning (m), Afternoon (a),Evening (e) \n')
-        if (day== 'm') or (day =='M'):
-            day='Morning'
-            return ('Hey this is '+employee+' ,the shift I worked on was the Morning.')
-        elif (day== 'a') or (day =='A'):
-            day='Afternoon'
-            return ('Hey this is '+employee+' ,today the shift I worked was the Afternoon.')
-        elif (day== 'e') or (day =='E'):
-            day='Evening'
-            return ('Hey this is '+employee+' ,and the shift I worked today was the Evening.')
-        else:
-            timesleep(2)
-            print(day)
-        exit+=1
-print(myshift())
+time.sleep(1)
 
 
+
+print('What shift did you work?')
+day=input('Morning (m), Afternoon (a),Evening (e) \n')
+if (day== 'm') or (day =='M'):
+    day=['I worked the morning shift today\n','Well I worked the morning shift.\n','I did the morning shift today.\n','I was on the morning shift.\n']
+    worklog=open('worklog.txt','a')
+    worklog.write(random.choice(day))
+    worklog.close()
+    print ('Morning')
+elif (day== 'a') or (day =='A'):
+    day=['Once again I worked the afternoon shift\n','Well I worked the afternoon shift.\n','I did the afternoon shift today.\n','I was on the afternoon shift.\n']
+    worklog=open('worklog.txt','a')
+    worklog.write(random.choice(day))
+    worklog.close()
+    print ('Afternoon')
+elif (day== 'e') or (day =='E'):
+    day=['Hey buddy I worked the evening.\n','Well I worked the evening shift.\n','I did the evening shift today.\n','I was on the evening shift.\n']
+    worklog=open('worklog.txt','a')
+    worklog.write(random.choice(day))
+    worklog.close()
+    print ('Evening')
+else:
+    time.sleep(2)
+    print(day)
+
+call=0
+while call<3:
+    calllist=['Today I took ','Well on my shift I took ','Well until now I took ','It was a easy ','Honestly I only took a total of ']
+    calls=input('how many calls did you take?\n')
+    if (calls.isdigit()):
+        print('you took '+calls+' calls today.')
+        worklog=open('worklog.txt','a')
+        worklog.write(random.choice(calllist)+calls+' calls today.\n')
+        worklog.close()
+        break
+    else:
+        time.sleep(1)
+        print('Not a number.')
+        time.sleep(1)
+        print(calls)
+         
+    call+=1
