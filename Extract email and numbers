@@ -1,0 +1,25 @@
+#-----------------------------------------#
+# how to extract email/numbers from files #
+#-----------------------------------------#
+import re
+text=('''
+216.771.1112
+619-916-1619
+undertaker@dead.com
+ray619@westcoast.com''')
+num=re.compile(r'''
+(((\d\d\d)?
+(\s|.|-)?)
+(\d\d\d
+(\s|.|-)
+\d\d\d\d))
+
+''',re.VERBOSE)
+eml=re.compile(r'[a-zA-Z0-9.]+@[a-zA-Z0-9.]+')
+numbers=num.findall(text)
+email=eml.findall(text)
+list=[]
+for numbs in numbers:
+    list.append(numbs[0])
+emailnumbers='numbers directory:'+'\n'+'\n'.join(list)+'\n'+'\n'+'Email Address:'+'\n'+'\n'.join(email)
+print(emailnumbers)
