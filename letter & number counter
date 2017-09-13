@@ -3,9 +3,9 @@ import pprint
 '''how many times a letter appeared in your name'''
 '''this command will print it out'''
 
-kungfu_jones=input('type a letter or a sentence, this will count each letter\n')
+count=input('type a letter or a sentence, this will count each letter\n')
 counting_dictionary={}
-for chong in kungfu_jones:
+for count:
     counting_dictionary.setdefault(chong,0)
     counting_dictionary[chong]=counting_dictionary[chong]+1
 pprint.pprint('here are the letters in you name: '+str(counting_dictionary))
