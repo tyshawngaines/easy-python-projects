@@ -1,7 +1,8 @@
-import pprint
+############################################################################
+# This code allows you to count how many times a key appears in the output #
+############################################################################
 
-'''how many times a letter appeared in your name'''
-'''this command will print it out'''
+import pprint
 
 count=input('type a letter or a sentence, this will count each letter\n')
 counting_dictionary={}
