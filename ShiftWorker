@@ -31,7 +31,7 @@ worklog.write(emplname)
 worklog.close()
 print(('Greetings %s,')%(employee.title())+'\n')
 
-time.sleep(1)
+time.sleep(0.5)
 
 
 
@@ -56,7 +56,7 @@ elif (day== 'e') or (day =='E'):
     worklog.close()
     print ('Evening')
 else:
-    time.sleep(2)
+    time.sleep(0.5)
     print(day)
 
 call=0
@@ -70,9 +70,12 @@ while call<3:
         worklog.close()
         break
     else:
-        time.sleep(1)
+        time.sleep(0.5)
         print('Not a number.')
-        time.sleep(1)
+        time.sleep(0.5)
         print(calls)
          
     call+=1
+time.sleep(1)
+print('\nFile was auto-saved as worklog.txt on your drive for refrence')
+print('Take care folks!')
