@@ -6,7 +6,9 @@
 # Once done it will make a txt file and email it to that individual.
 # Sounds cool huh? Who's willing to help out? give some inputs thanks.
 
-import time, random
+import time, random, datetime
+
+thedate = datetime.date.today()
 
 employee=input('What is your name?\n')
 emplist=[]
@@ -27,6 +29,7 @@ coolphrase=['Hi this is','Whats up it\'s','Hello it\'s me again','Hey stranger! 
 
 emplname=(random.choice(coolphrase))+' %s'%(employee.title())+'. \n'
 worklog=open('worklog.txt','w')
+worklog.write('Todays date: '+str(thedate)+'\n')
 worklog.write(emplname)
 worklog.close()
 print(('Greetings %s,')%(employee.title())+'\n')
@@ -79,3 +82,4 @@ while call<3:
 time.sleep(1)
 print('\nFile was auto-saved as worklog.txt on your drive for refrence')
 print('Take care folks!')
+print('Current date is: '+str(thedate))
