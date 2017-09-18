@@ -10,17 +10,13 @@ import time, random, datetime
 
 thedate = datetime.date.today()
 
-
+emplist=[]
 def shiftwork():
     employee=input('What is your name?\n')
-    emplist=[]
-
-
 
     while (employee.isdigit()) or (employee==''):
         print('Please try again.\n')
         employee=input('What is your name?\n')
-
 
     if employee in emplist:
         pass
