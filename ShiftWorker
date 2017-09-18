@@ -84,9 +84,9 @@ chars=0
 while chars<=300:
     final=input('Any comments? Yes(y),No(n)\n')
     if (final=='y') or (final=='Y'):
-        final=input('\n')
+        final=input('Type additional comments: \n')
         worklog=open('worklog.txt','a')
-        if final==30%15*2:
+        if chars%16==0:
             worklog.write(final+'\n')
         else:
             worklog.write(final)
