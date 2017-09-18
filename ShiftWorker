@@ -79,7 +79,26 @@ while call<3:
         print(calls)
          
     call+=1
-time.sleep(1)
+
+chars=0
+while chars<=300:
+    final=input('Any comments? Yes(y),No(n)\n')
+    if (final=='y') or (final=='Y'):
+        final=input('\n')
+        worklog=open('worklog.txt','a')
+        if final==30%15*2:
+            worklog.write(final+'\n')
+        else:
+            worklog.write(final)
+        worklog.close()
+    elif (final=='n') or (final=='N'):
+        print('Done see you tomorrow.')
+        break
+    else:
+        break
+    chars+=len(final)
+    print(chars)
+
 print('\nFile was auto-saved as worklog.txt on your drive for refrence')
 print('Take care folks!')
 print('Current date is: '+str(thedate))
