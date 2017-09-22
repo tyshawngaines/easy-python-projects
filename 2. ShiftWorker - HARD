@@ -1,12 +1,4 @@
-# Hi I have a project with a cool idea, im sure im not the first to try but what the heck right?
-# Anyways, I am doing a simplifed work flow.
-# Not just any workflow but one to simply knowledge transfer at the end of a shift.
-# The plan is to create a script that will ask alot of 1 letter response that equals alot.
-# I want to save people to list if name has not been used before
-# Once done it will make a txt file and email it to that individual.
-# Sounds cool huh? Who's willing to help out? give some inputs thanks.
-
-import time, random, datetime
+import time, random, datetime, smtplib
 
 thedate = datetime.date.today()
 
@@ -116,3 +108,14 @@ while q<1:
     else:
         print('please try again..\n')
     q+=1
+
+email=input('\nEnter your Gmail email to login\n')
+password=input('\nEnter your Gmail passowrd to complete login\n')
+to=input('\nEnter email address of recipent\n')
+From=input('\nEnter your own email as sender\n')
+
+netconnect = smtplib.SMTP('smtp.gmail.com',587)
+netconnect.starttls()
+netconnect.login(email,password)
+print(netconnect.sendmail(From,to,'Subject: Python Email \n\n Emailed file from my desktop'))
+netconnect.quit()
