@@ -1,8 +1,21 @@
+'''
+Basic script for office type jobs
+
+Created By: Ty'Shawn G. Gaines
+DATE: 9/22/2017
+'''
+
+
 import time, random, datetime, smtplib
 
+
+#-- prints out todays date --#
 thedate = datetime.date.today()
 
+#-- adds employee into list if they are not in the list --#
 emplist=[]
+
+#-- fuction for shiftwork --#
 def shiftwork():
     employee=input('What is your name?\n')
 
@@ -96,6 +109,7 @@ def shiftwork():
     print('Take care folks!')
     print('Current date is: '+str(thedate))
 
+#-- Initial question to begain workflow --
 q=0
 while q<1:
     print('Work log title: shiftwork()\nType: shiftwork() to resubmit to co-workers\n')
@@ -109,13 +123,20 @@ while q<1:
         print('please try again..\n')
     q+=1
 
+#-- gathers information to log into gmail account --#
 email=input('\nEnter your Gmail email to login\n')
 password=input('\nEnter your Gmail passowrd to complete login\n')
-to=input('\nEnter email address of recipent\n')
 From=input('\nEnter your own email as sender\n')
+to=input('\nEnter email address of recipent\n')
 
+subject=input('Subject:\n')
+emailbody=input('Type Your email body here (example: here is the report from our work day. Check it out!)\n')
+subject_emailbody='Subject:{}\n\n{}'.format(subject,emailbody)
+
+
+#-- log into email with infomation provided --#
 netconnect = smtplib.SMTP('smtp.gmail.com',587)
 netconnect.starttls()
 netconnect.login(email,password)
-print(netconnect.sendmail(From,to,'Subject: Python Email \n\n Emailed file from my desktop'))
+print(netconnect.sendmail(From,to,subject_emailbody))
 netconnect.quit()
