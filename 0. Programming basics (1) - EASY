@@ -1,1 +1,88 @@
+'''
+Basic Programming in Python
 
+Ty'Shawn G. Gaines
+9/28/2017
+
+
+plz download pythons IDLE indore to pratice
+
+How did I learn to program in python
+
+1. Github.com
+2. Codeacademy.com
+3. Udemy.com
+4. youtube.com
+5. google.com / random thoughts
+6. Sololearn mobile app
+7. http://www.pythontutor.com/live.html
+
+Greeting,
+
+    Hello and here are some of the basic I feel you should know inorder to
+atleast become somewhat of a programmer.
+There is a fear that" Once I learned the basic I still can't do anything'.
+thats not true. Myself was that was and what made me learn how to program
+was my girlfriend needed someone to motivate her to leave the healthcare field
+so why not right?
+
+I've made up 1000 excuses for why i can't learn how to program but once you
+learn somewhat you are hooked! trust me
+
+What i am learning for the most part:
+what can be done in Java, can be done in Python... to some extent.
+
+here are a list of things I've made just because.
+    1. Videogame bots
+    2. Autoscreen saver changer
+    3. Calculators
+    4. Hacking tools 
+    5. Desktop applications
+    6. Android applications
+    7. Your broken key on the laptop
+    8. alot more junk
+
+I'll explain breifly on all items listed but 
+'''
+
+# type the word print to display things on screen from idle,
+# print gives an output! try it!
+# -- this is a variable: variables stores data
+a=1000000
+
+
+''' numbers variables do not require quotation mark such as '' or ""
+some variables can be placed on the same line as long as they match up
+such as (c=11 and b=12)'''
+a=10
+c,b=11,12
+d=a+b+c
+
+# variables can be reassigned :
+    # before: a=10
+    # after: a=20 
+# or 
+    # red=10
+    # red='10'
+    # red=10.0
+# lets do some math
+'''
+booleans are True or False
+true==true: true
+true==false: false
+false==false: true
+
+        9+10==19   would return false
+        9==9       would return true
+
+
+<    means less than
+>    means greather than
+<=   means less than or equal to
+>=   means more than or equal to
+==   means equal to
+!=   mean not equal to
+'''
+
+
+print('hello')
