@@ -1,1 +1,22 @@
+'''
+TyShawn G. Gaines
+9/29/2017
 
+heres a random code generator i made from a list from basketball summer 2017.
+I will do this various different ways but it is late so i decided to do the easiest way first.
+'''
+
+import random,time
+
+list=['cavs have a good team in 2017','the GSW have kevin durant in 2017','Carmelo anthony is playing with the thunders for 2017','Rockets still have James Harden to depend on','Kyrie Irving said the world was flat in 2017','Spurs do not seem as a threat this year 2017.']
+
+print(random.choice(list))
+time.sleep(2)
+print(random.choice(list))
+time.sleep(2)
+print(random.choice(list))
+time.sleep(2)
+print(random.choice(list))
+time.sleep(2)
+print(random.choice(list))
+time.sleep(2)
