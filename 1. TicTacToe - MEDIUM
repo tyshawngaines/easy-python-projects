@@ -1,0 +1,29 @@
+#Python tic-tac-toe
+#Just an example
+
+import random
+xo=["X","O"]
+t={
+"tl":random.choice(xo),
+"tm":random.choice(xo),
+"tr":random.choice(xo),
+
+"ml":random.choice(xo),
+"mm":random.choice(xo),
+"mr":random.choice(xo),
+
+"bl":random.choice(xo),
+"bm":random.choice(xo),
+"br":random.choice(xo)
+}
+
+def board():
+    print (t["tl"]+"|"+t["tm"]+"|"+t["tr"])
+    print("-----")
+    print (t["ml"]+"|"+t["mm"]+"|"+t["mr"])
+    print("-----")
+    print (t["bl"]+"|"+t["bm"]+"|"+t["br"])
+
+
+    
+board()
