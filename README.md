@@ -1,4 +1,4 @@
-# 10-Python-Projects
+# easy-Python-Projects
 Beginner to intermediate projects for Python
 
 Hello and welcome.
