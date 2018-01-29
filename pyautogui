@@ -1,0 +1,29 @@
+'''
+pyautogui allows you to automate things:
+trust me this is very useful.
+ever heard of a bot? you can make one with it once you understand the basic.
+
+With pyautogui you can program you computer to do stuff you can do yourself.
+I have a second computer at home that sends a random good morning to friends and family to facebook at a random time between 8am-8:59am.
+I have also used it to watch videos online all day and get paid to do it for me because I have more important things to do.
+you get it?
+
+to get started you need to get pyautogui on your computer
+
+heres a basic code: to make it turn on your media player
+'''
+
+import pyautogui, time
+
+pyautogui.press('win')
+time.sleep(5)
+pyautogui.typewrite('windows media player')
+time.sleep(5)
+pyautogui.press('enter')
+
+'''
+sometimes you have to fish around just to get pyautogui installed and running
+but once it is running let you mind have some fun! :)
+
+
+'''
